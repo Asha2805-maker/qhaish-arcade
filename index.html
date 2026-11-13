@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3efff">
+<meta name="description" content="Step into Qhaish’s world of games, made with imagination and Construct 3.">
+<title>Qhaish’s Arcade · Small coder. Big adventures.</title>
+<link rel="icon" href="q-logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Decorative layers are hidden from assistive technology. -->
+<div class="pixel-background" aria-hidden="true">
+<div class="pixel-layer pixel-world">
+</div>
+<div class="pixel-layer pixel-stars">
+</div>
+</div>
+<header>
+<a class="brand" href="#">
+<img class="q-logo" src="q-logo.svg" alt="Q">
+<span class="brand-word">ARCADE<small>ALWAYS LEVELLING UP</small>
+</span>
+</a>
+<nav>
+<a href="#games">The games</a>
+<a href="#creator">Meet the creator</a>
+</nav>
+<div class="header-controls">
+<button class="motion" id="motion" aria-pressed="true" aria-label="Pause scrolling background">II <span>Motion</span>
+</button>
+<button class="music" id="music" type="button" aria-pressed="false"><span aria-hidden="true">♫</span> <span id="music-state">Music off</span></button>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow">
+<span class="spark">✦</span> A LITTLE IMAGINATION. A WHOLE NEW WORLD.</div>
+<h1>Small coder.<br>Big <span>adventures.</span>
+</h1>
+<p>Welcome to Qhaish’s arcade! A collection of worlds I’ve built, one block of code at a time. Pick an adventure and come explore.</p>
+<a class="primary" href="#games">Explore my games <span>↗</span>
+</a>
+<div class="hero-note">
+<span class="dot">
+</span> Made with imagination & Construct 3</div>
+</div>
+<div class="hero-art" aria-label="Interactive bunny mini demo arcade cabinet">
+<div class="orbit orbit1">
+</div>
+<div class="orbit orbit2">
+</div>
+<span class="float star s1">✦</span>
+<span class="float star s2">✧</span>
+<span class="float mini-planet">🪐</span>
+<div class="bubble bubble1">LEVEL UP! <span>✦</span>
+</div>
+<div class="arcade">
+<div class="arcade-top">
+<img class="cabinet-logo" src="q-logo.svg" alt="Q"> <b>ARCADE</b>
+<span>✦</span>
+</div>
+<div class="screen playable-screen">
+<canvas id="arcade-game" width="320" height="240" tabindex="-1" aria-label="Bunny carrot mini demo. Left and right to move, Space to jump, R to reset." aria-describedby="arcade-help"></canvas>
+<div class="coin-prompt" id="coin-prompt">
+  <button type="button" class="coin-button" id="arcade-coin">
+    <span class="coin-token" aria-hidden="true">Q</span>
+    <span>Insert coin to play</span>
+  </button>
+</div>
+</div>
+<div class="controls playable-controls">
+<div id="arcade-stick" role="group" aria-label="360-degree joystick. Tilt left or right to move the bunny." tabindex="-1" aria-disabled="true"><span class="stick-knob"></span><span class="stick-direction stick-n" aria-hidden="true">↑</span><span class="stick-direction stick-s" aria-hidden="true">↓</span><span class="stick-direction stick-w" aria-hidden="true">←</span><span class="stick-direction stick-e" aria-hidden="true">→</span></div>
+<button id="arcade-jump" type="button" disabled>A<small>JUMP</small></button>
+<button id="arcade-reset" type="button" disabled>↻<small>RESET</small></button>
+</div>
+<div class="cabinet-bottom">
+<span>MINI DEMO · COLLECT 3 CARROTS</span>
+<div>▰</div>
+</div>
+</div>
+<div class="bubble bubble2">TRY THE JOYSTICK <span>⚡</span>
+</div>
+</div>
+</section>
+<p id="arcade-help" class="arcade-help">Click or tap “Insert coin to play,” then tilt the joystick left or right to move. Press A to jump. On a laptop, click the screen, then use ← → to move and Space to jump. <span id="arcade-score" role="status">Ready for a virtual coin.</span></p>
+<div class="arcade-floor">
+<section id="games" class="games">
+<div class="section-top">
+<div>
+<div class="eyebrow">THE GAME COLLECTION</div>
+<h2>Choose your next adventure<span>.</span>
+</h2>
+</div>
+<span class="count">7 games</span>
+</div>
+<div class="filters" aria-label="Filter games">
+<button class="selected" data-filter="all" aria-pressed="true">All Games <span>7</span>
+</button>
+<button data-filter="brick-breaker" aria-pressed="false">Brick Breaker</button>
+<button data-filter="shooter" aria-pressed="false">Shooters</button>
+<button data-filter="platform" aria-pressed="false">Platformer</button>
+<button data-filter="maze" aria-pressed="false">Maze</button>
+<button data-filter="collecting" aria-pressed="false">Collecting</button>
+</div>
+<div id="grid" class="grid">
+</div>
+<p class="collection-note">Select a game to see its progress. Playable versions will be added as the game files are connected.</p>
+</section>
+<aside class="media-panel tunes" aria-labelledby="tunes-title">
+  <img class="album-cover" src="marshmello-alone.png" width="316" height="316" alt="Marshmello Alone cover: pixel-art helmet in a colourful forest" loading="lazy">
+  <h2 id="tunes-title">Alone</h2>
+  <p class="video-artist">Marshmello</p>
+  <button id="open-video" type="button" class="media-link" aria-haspopup="dialog">▶ Watch music video</button>
+</aside>
+<aside class="media-panel favourites" aria-labelledby="favourites-title">
+  <div class="eyebrow">WATCH &amp; BUILD</div>
+  <h2 id="favourites-title">Qhaish’s favourites</h2>
+  <a class="media-link minecraft" href="https://www.youtube.com/results?search_query=minecraft+how+to+build+a+treehouse+tutorial" target="_blank" rel="noopener noreferrer">
+    <img class="favourite-logo minecraft-wordmark" src="minecraft-logo.svg" alt="Minecraft" width="512" height="88" loading="lazy"><img class="favourite-scene" src="treehouse.svg" alt="Block-built treehouse with a ladder, lantern and leafy canopy" width="320" height="200" loading="lazy"><strong>Minecraft treehouses</strong><span>Find a build tutorial on YouTube</span>
+  </a>
+  <a class="media-link roblox" href="https://www.youtube.com/results?search_query=roblox+build+a+boat+for+treasure+gameplay" target="_blank" rel="noopener noreferrer">
+    <span class="roblox-brand"><img class="favourite-logo roblox-symbol" src="roblox-logo.svg" alt="" width="512" height="512" loading="lazy"><b>ROBLOX</b></span><img class="favourite-scene" src="roblox-build.svg" alt="Smiling block avatar, colourful building blocks and a boat on blue water" width="320" height="200" loading="lazy"><strong>Roblox boat builds</strong><span>Find Build a Boat for Treasure gameplay</span>
+  </a>
+</aside>
+</div>
+
+<section class="creator" id="creator">
+<div class="portrait">
+<div class="portrait-frame">
+<img src="qhaish-profile.jpeg" alt="Qhaish building a game in Construct 3 on his laptop" width="1536" height="1152" loading="lazy">
+</div>
+<span class="portrait-sticker">PLAYER & CREATOR ✦</span>
+</div>
+<div>
+<div class="eyebrow">MEET THE MIND BEHIND THE GAMES</div>
+<h2>Hi, I’m Qhaish<span> 👋</span>
+</h2>
+<p>I’m learning to turn my ideas into games with Construct 3. From bouncing balls to space battles, every project is a chance to try something new.</p>
+<div class="skills">
+<span><i class="skill-icons" aria-hidden="true">🎮</i> Game creator</span>
+<span><i class="skill-icons" aria-hidden="true">🧠 💡</i> Creative thinker</span>
+<span><i class="skill-icons" aria-hidden="true">🙂 <code>&lt;/&gt;</code></i> Always learning</span>
+</div>
+</div>
+</section>
+<section class="next">
+<span class="next-icon" aria-hidden="true">💎</span>
+<div>
+<div class="eyebrow">ON THE WORKBENCH</div>
+<h3>Tilemap Adventure</h3>
+<p>Qhaish is building two levels with lives, gems, and locked doors. Jump onto a switch to open the laser gate, grab the laser gun, and face the enemy.</p>
+</div>
+<span class="building">
+<i>
+</i> In the making</span>
+</section>
+</main>
+<footer>
+<a class="brand" href="#">
+<img class="q-logo" src="q-logo.svg" alt="Q">
+<span class="brand-word">ARCADE<small>ALWAYS LEVELLING UP</small>
+</span>
+</a>
+<p>Dream it. Code it. Play it. <span>✦</span>
+</p>
+<small>Made with Construct 3 & a lot of curiosity.</small>
+<div class="footer-credits">
+  <div>Website designed by <strong>Asha Ganesan</strong></div>
+  <a class="academy-credit" href="https://timedooracademy.com/">
+    <img src="timedoor-academy-logo.svg" alt="" width="237" height="61" loading="lazy">
+    <span>Learning with <strong>Timedoor Academy</strong></span>
+  </a>
+</div>
+</footer>
+<dialog id="details">
+<button id="close" aria-label="Close game details">×</button>
+<div id="detail-art">
+</div>
+<div class="detail-copy">
+<div class="eyebrow" id="detail-tag">
+</div>
+<h2 id="detail-title">
+</h2>
+<p id="detail-description">
+</p>
+<div class="notice">
+<b id="detail-status">
+</b>
+<p id="detail-help">
+</p>
+</div>
+<dl id="detail-challenges" class="detail-challenges" hidden></dl>
+<button class="primary" id="back">Back to the arcade ↗</button>
+</div>
+</dialog>
+<dialog id="music-video-dialog" aria-labelledby="music-video-title">
+  <div class="video-dialog-heading">
+    <h2 id="music-video-title">Alone — Marshmello</h2>
+    <button id="close-video" type="button" aria-label="Close music video">×</button>
+  </div>
+  <div id="video-container"></div>
+  <p class="player-help">Use your phone or computer’s volume controls to adjust the sound.</p>
+  <a class="media-link" href="https://www.youtube.com/watch?v=ALZHF5UqnU4" target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a>
+</dialog>
+<audio id="arcade-soundtrack" src="background-music.mp3" preload="none" loop></audio>
+<script src="arcade-game.js"></script>
+<script src="app.js">
+</script>
+</body>
+</html>

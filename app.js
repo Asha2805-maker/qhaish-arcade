@@ -42,7 +42,7 @@ const games=[{title:'Paddle & Blocks',type:'brick-breaker',genre:'BRICK BREAKER 
 const grid = document.querySelector('#grid');
 
 function posterPath(game) {
-  return `game-previews/${game.art}.png`;
+  return `./${game.art}.png`;
 }
 
 function art(game, details = false) {
